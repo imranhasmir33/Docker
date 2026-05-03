@@ -1,0 +1,37 @@
+{
+  "log": { "loglevel": "none" },
+  "inbounds": [
+    {
+      "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          { "id": "IMRANBRO" }
+        ],
+        "decryption": "none",
+        "fallbacks": [{ "dest": 8081 }]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/t.me/imranbro12"
+        }
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 8081,
+      "protocol": "http",
+      "settings": {
+        "response": {
+          "status": 200,
+          "body": "imran"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    { "protocol": "freedom" }
+  ]
+}
